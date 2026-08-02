@@ -50,12 +50,12 @@ Two ways to run inference on data that has no ground-truth gloss:
   python generate.py "Tôi ghét nhất con dê" "Tôi thích nhất thịt heo"
   ```
 
-- **`translate_file.py`** — pass a `.txt` file where each line is one
+- **`infer.py`** — pass a `.tsv` file where each line is one
   input sentence. Prints `text -> gloss` for every line, and optionally
   saves a `.tsv` with columns `text`, `gloss`.
   ```bash
-  python translate_file.py input.txt -o output.tsv
-  python translate_file.py input.txt -o output.tsv --model-dir /path/to/checkpoint --lang vi_VN --batch-size 8
+  python infer.py input.tsv -o output.tsv
+  python infer.py input.tsv -o output.tsv --model-dir /path/to/checkpoint --lang vi_VN --batch-size 8
   ```
 
 This is different from `eval.py`: `eval.py` expects a `.tsv` that already
